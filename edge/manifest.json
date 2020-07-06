@@ -1,0 +1,50 @@
+{
+  "manifest_version": 2,
+  "name": "分享到臉書",
+  "version": "1.8",
+
+  "description": "分享到臉書",
+
+  "icons": {
+    "48": "icon/facebook.png"
+  },
+
+  "permissions": [
+    "activeTab",
+    "contextMenus",
+    "storage"
+  ],
+
+  // "applications": {
+  //   "gecko": {
+  //     "id": "{897ef218-1872-4956-b79d-3a87fe42c4cf}"
+  //   }
+  // },
+
+  "options_ui": {
+    "page": "options.html"
+  },
+
+  "background": {
+    "scripts": ["tacolin_bg.js"]
+  },
+
+  "browser_action": {
+    "default_icon": "icon/facebook.png"
+  },
+
+  "commands": {
+    "_execute_browser_action": {
+      "suggested_key": {
+        "default": "Alt+X"
+      }
+    }
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["tacolin.js"]
+    }
+  ]
+}
